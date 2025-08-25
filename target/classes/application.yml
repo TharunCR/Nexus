@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: banking-application
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/nexus?useSSL=false&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: "@Letmein4me"
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+
+server:
+  port: 8080
+
+jwt:
+  secret: zVZv1S0urHJ0ulf+9BtPL/17hU+GnGDTmN/cxHZqb6g2iGYD4mUzN/k/BiNRxh/AhuouOJCMSxSkmPEBV2tsfQ==
+  expiration: 86400000 # 24 hours in milliseconds
+
+logging:
+  level:
+    com.banking: DEBUG
+    org.springframework.security: DEBUG
