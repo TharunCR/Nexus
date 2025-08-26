@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @OpenAPIDefinition(
         info = @Info(title = "Banking API", version = "v1"),
-         // This applies the security scheme globally to all endpoints
+        // This applies the security scheme globally to all endpoints
         security = @SecurityRequirement(name = "bearerAuth")
 )
 @SecurityScheme(
