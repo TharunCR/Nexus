@@ -67,16 +67,16 @@ public class WebSecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-                // 1. Disable CSRF protection using the new lambda syntax
+                //  Disable CSRF protection using the new lambda syntax
                 .csrf(AbstractHttpConfigurer::disable)
 
-                // 2. Configure exception handling
+                //  Configure exception handling
                 .exceptionHandling(exception -> exception.authenticationEntryPoint(unauthorizedHandler))
 
-                // 3. Set the session creation policy to STATELESS
+                //  Set the session creation policy to STATELESS
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 
-                // 4. Define authorization rules for HTTP requests
+                //  Define authorization rules for HTTP requests
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(PUBLIC_WHITELIST).permitAll()
                         .requestMatchers("/api/admin/**").hasRole("ADMIN")
