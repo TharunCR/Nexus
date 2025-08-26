@@ -18,7 +18,7 @@ public class JwtResponse {
         this.accountNumber = accountNumber;
     }
     
-    // Getters and Setters
+    //  Getters and Setters
     public String getToken() { return token; }
     public void setToken(String token) { this.token = token; }
     
