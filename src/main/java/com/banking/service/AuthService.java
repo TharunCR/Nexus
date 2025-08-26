@@ -93,7 +93,7 @@ public class AuthService {
             accountNumber.append(random.nextInt(10));
         }
         
-        // Check if account number already exists
+        //  Check if account number already exists
         if (accountRepository.existsByAccountNumber(accountNumber.toString())) {
             return generateAccountNumber(); // Recursive call if exists
         }
