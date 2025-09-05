@@ -4,6 +4,7 @@ import com.banking.dto.AccountResponse;
 import com.banking.dto.TransactionRequest;
 import com.banking.dto.TransactionResponse;
 import com.banking.service.AccountService;
+import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -22,6 +23,7 @@ public class AccountController {
     private AccountService accountService;
     
     @GetMapping("/my-account")
+    @Hidden
     @PreAuthorize("hasRole('CUSTOMER') or hasRole('ADMIN')")
     public ResponseEntity<?> getMyAccount() {
         try {
