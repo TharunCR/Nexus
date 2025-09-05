@@ -2,6 +2,7 @@ package com.banking.controller;
 
 import com.banking.dto.AccountResponse;
 import com.banking.service.AccountService;
+import io.swagger.v3.oas.annotations.Hidden;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -19,6 +20,7 @@ public class AdminController {
     private AccountService accountService;
     
     @GetMapping("/accounts")
+    @Hidden
     public ResponseEntity<?> getAllAccounts() {
         try {
             List<AccountResponse> accounts = accountService.getAllAccounts();
