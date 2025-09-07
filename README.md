@@ -42,7 +42,7 @@ A comprehensive Banking Application built with Spring Boot (Java 17) featuring J
 ## Quick Start
 
 ### Prerequisites
-- Java 17 or higher
+- Java 11 or higher
 - Maven 3.6+
 - MySQL/PostgreSQL (optional - H2 is configured by default)
 
